@@ -12,8 +12,7 @@ class Zookeeper(Employee):
 
     def feed_animal(self, animal_name):
         return f"{self.name} karmi teraz zwierze o imieniu {animal_name}."
-
-
+     
 class Animal:
     """
     To jest nasza instrukcja (klasa) dla wszystkich zwierząt.
@@ -27,6 +26,22 @@ class Animal:
         # Ta funkcja pozwoli zwierzęciu się przedstawić
         return f"Jestem {self.name}, reprezentuję gatunek: {self.species}."
 
+class Lion(Animal):
+    def make_sound(self):
+        return f"{self.name} ryczy: ROAR!"
+    
+class Elephant(Animal):
+    def make_sound(self):
+        return f"{self.name} trąbi: TOOT!"
+    
+class Vet(Employee):
+    def __init__(self, name):
+        super().__init__(name, "Weterynarz")
+
+    def heal_animal(self, animal_name):
+        return f"{self.name} bada i leczy zwierzę: {animal_name}."
+
+
 # --- SPRAWDZAMY CZY DZIAŁA ---
 if __name__ == "__main__":
     testowy_zwierz = Animal("Leon", "Lew")
@@ -34,3 +49,9 @@ if __name__ == "__main__":
 
     opiekun = Zookeeper("Marek")
     print(opiekun.feed_animal("Leon"))
+
+    doktor = Vet("Anna")
+    simba = Lion("Simba", "Lew")
+                 
+    print(simba.make_sound())
+    print(doktor.heal_animal("Simba"))
