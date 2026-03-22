@@ -14,7 +14,7 @@ def main():
 #3. Zwierzęta
 
     simba = Lion("Simba", "Lew", monthly_cost_val=600.0)
-    nala = Lion("Nala", "Lew", monthly_cos_val=550.0)
+    nala = Lion("Nala", "Lew", monthly_cost_val=550.0)
     dumbo = Elephant("Dumbo", "Słoń", monthly_cost_val=1200.0)
 
 #4. Zwierzęta do wybiegu
